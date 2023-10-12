@@ -55,28 +55,10 @@ return packer.startup(function(use)
   use "L3MON4D3/LuaSnip"
   use "saadparwaiz1/cmp_luasnip"
   
-  use "Hoffs/omnisharp-extended-lsp.nvim"
-  --[[lsp
-  use {
-	  'VonHeikemen/lsp-zero.nvim',
-	  branch = 'v1.x',
-	  requires = {
-		  -- LSP Support
-		  {'neovim/nvim-lspconfig'},
-		  {'williamboman/mason.nvim'},
-		  {'williamboman/mason-lspconfig.nvim'},
-      {'Hoffs/omnisharp-extended-lsp.nvim'},
 
-		  -- Autocompletion
-		  {'hrsh7th/nvim-cmp'},
-		  {'hrsh7th/cmp-buffer'},
-		  {'hrsh7th/cmp-path'},
-		  {'saadparwaiz1/cmp_luasnip'},
-		  {'hrsh7th/cmp-nvim-lsp'},
-		  {'hrsh7th/cmp-nvim-lua'},
-	  }
-  }
-  --]]
+  use "m4xshen/autoclose.nvim"
+
+  use "windwp/nvim-ts-autotag"
 
   --Git
   use "tpope/vim-fugitive"

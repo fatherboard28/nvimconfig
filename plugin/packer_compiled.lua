@@ -79,6 +79,11 @@ _G.packer_plugins = {
     path = "/Users/jonathan/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["autoclose.nvim"] = {
+    loaded = true,
+    path = "/Users/jonathan/.local/share/nvim/site/pack/packer/start/autoclose.nvim",
+    url = "https://github.com/m4xshen/autoclose.nvim"
+  },
   catppuccin = {
     loaded = true,
     path = "/Users/jonathan/.local/share/nvim/site/pack/packer/start/catppuccin",
@@ -159,10 +164,10 @@ _G.packer_plugins = {
     path = "/Users/jonathan/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
     url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
   },
-  ["omnisharp-extended-lsp.nvim"] = {
+  ["nvim-ts-autotag"] = {
     loaded = true,
-    path = "/Users/jonathan/.local/share/nvim/site/pack/packer/start/omnisharp-extended-lsp.nvim",
-    url = "https://github.com/Hoffs/omnisharp-extended-lsp.nvim"
+    path = "/Users/jonathan/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",
+    url = "https://github.com/windwp/nvim-ts-autotag"
   },
   ["packer.nvim"] = {
     loaded = true,
