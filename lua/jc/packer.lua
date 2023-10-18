@@ -55,6 +55,7 @@ return packer.startup(function(use)
   use "L3MON4D3/LuaSnip"
   use "saadparwaiz1/cmp_luasnip"
   
+  use 'quangnguyen30192/cmp-nvim-ultisnips'
 
   use "m4xshen/autoclose.nvim"
 
