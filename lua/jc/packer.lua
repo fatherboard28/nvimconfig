@@ -41,6 +41,9 @@ return packer.startup(function(use)
 
   --SyntaxHightlighting
 
+	use "hrsh7th/cmp-nvim-lsp"
+  use ("L3MON4D3/LuaSnip")
+  use "saadparwaiz1/cmp_luasnip"
   
 	use {"hrsh7th/nvim-cmp",
         dependencies = {
@@ -99,7 +102,6 @@ return packer.startup(function(use)
           })
         end
       }
-	use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-buffer"
   use "hrsh7th/cmp-path"
   use "hrsh7th/cmp-cmdline"
@@ -127,18 +129,12 @@ return packer.startup(function(use)
     end
   }
   
-  use {"L3MON4D3/LuaSnip", event = "VeryLazy",
-        config = function()
-          require("luasnip.loaders.from_lua").load({paths = ".snippets"})
-        end
-      }
 
   use "nvim-treesitter/nvim-treesitter"
   use "nvim-treesitter/nvim-treesitter-context"
 
   use "folke/neodev.nvim"
 
-  use "saadparwaiz1/cmp_luasnip"
   
   use 'quangnguyen30192/cmp-nvim-ultisnips'
 
@@ -158,3 +154,5 @@ return packer.startup(function(use)
   use "eandrju/cellular-automaton.nvim"
 
 end)
+
+--require("luasnip.loaders.from_vscode").load({paths={"./snippets"}})
