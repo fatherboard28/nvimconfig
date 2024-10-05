@@ -79,16 +79,17 @@ require("lazy").setup({
       vim.keymap.set("n", "<leader>z", "<cmd>TroubleToggle quickfix<cr>", {silent = true, noremap = true})
     end,
   },
-  {"catppuccin/nvim", priority=1000,
+  { "catppuccin/nvim", 
+    name = "catppuccin", 
+    priority = 1000,
     config = function()
       require("catppuccin").setup({
         transparent_background = true,
         term_colors = true,
       })
-      vim.cmd([[colorscheme catppuccin "catppuccin-mocha"]])
+      vim.cmd([[colorscheme catppuccin-mocha]])
     end,
   },
-
   -- file navigation
   {"ThePrimeagen/harpoon",
     config = function()
@@ -217,7 +218,7 @@ require("lazy").setup({
       require('mason').setup()
       local mason_lspconfig = require('mason-lspconfig')
       mason_lspconfig.setup {
-        ensure_installed = { 'pyright', 'clangd', 'biome', 'cssls' }
+        ensure_installed = { 'pyright', 'clangd', 'eslint', 'cssls', 'rust_analyzer' }
       }
 
       --LSP's Config
@@ -247,7 +248,7 @@ require("lazy").setup({
         capabilities = capabilities
       }
 
-      require('lspconfig').biome.setup{
+      require('lspconfig').eslint.setup{
         on_attach = on_attach,
         cpabilities = capabilities,
       }
@@ -259,6 +260,19 @@ require("lazy").setup({
       require('lspconfig').gdscript.setup{
         on_attach = on_attach,
         capabilities = capabilities,
+      }
+      require('lspconfig').rust_analyzer.setup{
+        on_attach = on_attach,
+        capabilities = capabilities,
+        settings = {
+          ['rust-analyzer'] = {
+            diagnostics = {
+              disabled = {
+                "unresolved-proc-macro",
+              },
+            }
+          }
+        }
       }
     end
   },
@@ -340,12 +354,55 @@ require("lazy").setup({
 
 
 
+--
+--extra stuff
+--  {"catppuccin/nvim", priority=1000,
+--    config = function()
+--      require("catppuccin").setup({
+--        transparent_background = true,
+--        term_colors = true,
+--      })
+--      vim.cmd([[colorscheme catppuccin "catppuccin-mocha"]])
+--    end,
+--  },
 
+ -- {"tanvirtin/monokai.nvim", priority=1000,
+ --   config = function()
+ --     local monokai = require("monokai")
+ --     local palette = monokai.classic
+ --     monokai.setup({
+ --       palette = {
+ --       },
+ --       custom_hlgroups = {},
+ --     })
+ --     vim.cmd([[hi NORMAL guibg=NONE]])
+ --   end,
+ -- },
 
-
-
-
-
+  --{"daschw/leaf.nvim", priority=1000,
+  --  config = function()
+  --    require("leaf").setup({
+  --      transparent = true,
+  --      colors = {
+  --       red0=     "#477a62",
+  --       blue0=   "#0dcd0f",
+  --       yellow0=  "#a9e884",
+  --       teal0=    "#33ab64",
+  --       aqua0=    "#2c8424",
+  --       green0=    "#acc2de",
+  --       red1=     "#538d72",
+ --        blue1=   "#0fe612",
+ --        yellow1=  "#b7eb98",
+ --        teal1=    "#38bc6f",
+ --        aqua1=    "#36a02c",
+ --        green1=    "#c5d4e8",
+ --       }
+ --     })
+ --     vim.cmd([[colorscheme leaf]])
+ --     vim.cmd([[hi NORMAL guibg=NONE]])
+ --   end,
+ -- },
+ --
 
 
 
